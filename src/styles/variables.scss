@@ -1,0 +1,102 @@
+$font-family: Microsoft YaHei,PingFang SC,Helvetica,Arial,sans-serif;
+$size: 10px;
+$min-width: 1366px;
+
+// 主色调
+$base-color: #2d8cf0;
+$base-active-color: #3966b2;
+$base-hover-color: #20a1ff;
+
+// 背景色
+$bg-color: #f8f8f9;
+
+$success-color: #19be6a;
+$warning-color: #f90;
+$danger-color: #ed3f14;
+$info-color: #878d99;
+
+$error-color: #ed3f14;
+
+// 边框色
+$border-color: #e4e4e4;
+// 字体色
+$font-color: #333;
+
+$red-color: #f60;
+$dark-color: #666;
+$gray-color: #999;
+$disable-color: #bbbec4;
+$placeholder-color: #aaa;
+
+// 解决浮动问题
+@mixin clearfix {
+  &:after,
+  &:before {
+    content: '';
+    display: table;
+    width: 0;
+    height: 0;
+    font-size: 0;
+  }
+
+  &:after {
+    visibility: hidden;
+    clear: both;
+  }
+}
+
+// 显示省略符号来代表被修剪的文本
+@mixin ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+//定义media-queries的最小最大宽度
+@mixin screen($min, $max) {
+   @if length($min)==0{
+    @media screen and ( max-width: $max ) {
+       @content;
+    }
+  }
+  @else if length($max)==0 {
+     @media screen and ( min-width: $min ){
+      @content;
+    }
+  }
+  @else {
+     @media screen and ( min-width: $min ) and ( max-width: $max ){
+      @content;
+    }
+  }
+}
+// 三角形
+@mixin triangle($direction, $size, $border-color) {
+  content: '';
+  height: 0;
+  width: 0;
+  @if $direction == top {
+    border-bottom: $size solid $border-color;
+    border-left: $size dashed transparent;
+    border-right: $size dashed transparent;
+  }
+  @else if $direction == right {
+    border-left: $size solid $border-color;
+    border-top: $size dashed transparent;
+    border-bottom: $size dashed transparent;
+  }
+  @else if $direction == bottom {
+    border-top: $size solid $border-color;
+    border-left: $size dashed transparent;
+    border-right: $size dashed transparent;
+  }
+  @else if $direction == left {
+    border-right: $size solid $border-color;
+    border-top: $size dashed transparent;
+    border-bottom: $size dashed transparent;
+  }
+}
+// px转rem
+@function pxToRem($px, $base: 100) {
+   @return ($px / $base) * 1rem;
+}

@@ -1,0 +1,43 @@
+// button
+
+.btn {
+  position: relative;
+  display: inline-block;
+  height: pxToRem(36);
+  min-width: pxToRem(64);
+  padding: 0 pxToRem(8);
+  line-height: pxToRem(36);
+  font-weight: 500;
+  font-size: pxToRem(14);
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  background: rgba(158, 158, 158, .2);
+  border: none;
+  border-radius: pxToRem(2);
+  will-change: box-shadow, transform;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &:hover {
+    background-color: rgba(158, 158, 158, .2);
+  }
+
+  &:active {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
+    background-color: rgba(158, 158, 158, .4);
+  }
+
+  &:focus:not(:active) {
+    background-color: rgba(158, 158, 158, .4);
+  }
+}

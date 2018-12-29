@@ -1,0 +1,156 @@
+*,*:before, *:after {
+  box-sizing: border-box;
+}
+a,
+b,
+body,
+button,
+dd,
+div,
+dl,
+dt,
+em,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+i,
+iframe,
+img,
+input,
+label,
+li,
+ol,
+p,
+select,
+span,
+strong,
+textarea,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+html,body{
+  height: 100%;
+}
+html {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  line-height: $size*1.4;
+  font-family: $font-family;
+  font-size: $size*1.4;
+  color: $font-color;
+  background-color: $bg-color;
+}
+
+a {
+  text-decoration: none;
+  color: $font-color;
+  cursor: pointer;
+  outline: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  outline: none;
+  border-radius: 0;
+}
+
+button {
+  border: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+em,
+i {
+  font-style: normal;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+iframe {
+  border: 0;
+}
+@import 'animation.scss';
+@import 'modules/button.scss';
+
+.page {
+  height: 100%;
+}
+
+.content {
+  min-height: 100%;
+  margin-top: -$size*4.8;
+  padding: $size*4.8 0 $size*5.8;
+}
+
+.wrapper {
+  width: 100%;
+  min-width: $min-width;
+
+  .wrapper-box {
+    width: $min-width;
+    margin: 0 auto;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px
+}
+
+::-webkit-scrollbar-track-piece {
+  background: 0 0
+}
+
+::-webkit-scrollbar-track:hover {
+  background: rgba(79,111,127,.05)
+}
+
+.vue-ui-dark-mode ::-webkit-scrollbar-track:hover {
+  background: rgba(79,111,127,.1)
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #b4c7d0;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  border-radius: 5px
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #4f6f7f
+}
